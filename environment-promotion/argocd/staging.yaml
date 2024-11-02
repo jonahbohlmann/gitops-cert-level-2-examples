@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/codefresh-contrib/gitops-cert-level-2-examples.git'
+    repoURL: 'https://github.com/jonahbohlmann/gitops-cert-level-2-examples.git'
     path: ./environment-promotion/envs/staging
     targetRevision: HEAD
   destination:
