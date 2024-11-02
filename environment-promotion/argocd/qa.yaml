@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: environment-promotion-qa
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/codefresh-contrib/gitops-cert-level-2-examples.git'
+    path: ./environment-promotion/envs/qa
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: qa
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
